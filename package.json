@@ -1,0 +1,17 @@
+{
+  "name": "project_blog",
+  "description": "Blog personal sobre mis videojuegos favoritos de todos los tiempos que será entregado como proyecto del curso Sistemas y Tecnologías Web.",
+  "version": "1.0.0",
+  "main": "main.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node backend/src/main.js"
+  },
+  "keywords": [],
+  "author": "Daniel Penedo",
+  "license": "ISC",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
+}
