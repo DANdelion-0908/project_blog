@@ -11,10 +11,11 @@ function Dashboard(navigator) {
     <div>
         <nav>
             <a href="/home">Inicio</a>
-            <a href="/"></a>
+            <a href="/top">Top 5</a>
+            <a href="/placeholder">No sé</a>
         </nav>
     </div>
-  )
+  );
 };
 
 export default Dashboard;
