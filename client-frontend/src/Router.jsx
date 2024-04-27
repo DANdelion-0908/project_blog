@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Dashboard from "./views/Dashboard";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 function Router() {
     const [page, setPage] = useState("dashboard");
@@ -21,7 +23,9 @@ function Router() {
 
     return (
         <>
+            <Header />
             {content}
+            {page!='dashboard' && <Footer />}
         </>
     )
 };

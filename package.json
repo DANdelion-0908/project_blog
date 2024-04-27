@@ -6,7 +6,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/src/main.js"
+    "start": "node backend/src/api/main.js"
   },
   "keywords": [],
   "author": "Daniel Penedo",

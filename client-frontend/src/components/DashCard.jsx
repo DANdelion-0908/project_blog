@@ -1,0 +1,15 @@
+function DashCard({ id, image, name, navigator }) {
+    const handlePageChange = () => {
+        navigator("")
+    };
+
+    return(
+        <div className="dashCard-Div" style={{backgroundImage: `url(${image})`}} onClick={() => alert(id)}>
+            <div style={{backgroundColor: "#B8DEDCef", width: "100%", height: "5em", alignSelf: "flex-end", textAlign: "start", paddingLeft: "5%", borderRadiusBottom: "0.25vw"}}>
+                <h3 style={{color: "black"}}>{name}</h3>
+            </div>
+        </div>
+    );
+};
+
+export default DashCard;

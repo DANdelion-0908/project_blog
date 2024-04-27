@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAllPosts, createPost, deletePost, getPost, putPost } from './dbs.js'
+import { getAllPosts, createPost, deletePost, getPost, putPost } from '../api/dbs.js'
 import cors from 'cors'
 
 const app = express()
@@ -7,10 +7,10 @@ const port = 3000
 app.use(express.json())
 
 app.use(cors({
-  origin: "http://localhost:8080"
+  origin: "http://localhost:5173"
 }))
 
-app.post('/posts', async (req, res) => {
+app.post('/admin/posts', async (req, res) => {
   const { title, picture, post_description, points } = req.body
 
   try {
@@ -23,7 +23,7 @@ app.post('/posts', async (req, res) => {
   }
 })
 
-app.get('/posts', async (req, res) => {
+app.get('/user/posts', async (req, res) => {
   try {
     const posts = await getAllPosts()
     res.json(posts).status(200)
@@ -33,7 +33,7 @@ app.get('/posts', async (req, res) => {
   }
 })
 
-app.put('/posts/:postId', async (req, res) => {
+app.put('/admin/posts/:postId', async (req, res) => {
   const {postId} = req.params;
   const {title, picture, post_description, points} = req.body;
 
@@ -46,7 +46,7 @@ app.put('/posts/:postId', async (req, res) => {
   }
 });
 
-app.delete('/posts/:postID', async (req, res) => {
+app.delete('/admin/posts/:postID', async (req, res) => {
   const {postID} = req.params
   try {
     await deletePost(postID)
@@ -58,7 +58,7 @@ app.delete('/posts/:postID', async (req, res) => {
   }
 })
 
-app.get('/posts/:postID', async (req, res) => {
+app.get('/user/posts/:postID', async (req, res) => {
   const { postID } = req.params
   try {
     const post = await getPost(postID)
