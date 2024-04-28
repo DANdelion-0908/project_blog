@@ -5,8 +5,8 @@ import { Suspense } from "react";
 function Dashboard(navigator) {
   const apiURL = 'http://localhost:22217/user/posts';
 
-  const [selectedOption, setSelectedOption] = useState("");
-  const [posts, setPosts] = useState([]);
+  const [selectedBlog, setSelectedBlog] = useState("");
+  const [content, setContent] = useState(null);
 
   async function getPosts() {
     try {
@@ -23,7 +23,22 @@ function Dashboard(navigator) {
       };
   
       const data = await response.json();
-      setPosts(data);
+
+      setContent(
+        <>
+          <div className="background">
+            <h1>Blogs publicados</h1>
+            <hr />
+            <Suspense fallback={<h1>Loading...</h1>}>
+              {data.map((post, index) => {
+                return(
+                  <DashCard key={index} id={post.id} name={post.title} image={post.picture} setBlog={setSelectedBlog}/>
+                );
+              })}
+            </Suspense>
+          </div>
+        </>
+      )
       console.log(data);
       
     } catch (error) {
@@ -33,26 +48,14 @@ function Dashboard(navigator) {
   };
 
   useEffect(() => {
-    getPosts()
+    getPosts();
   }, []);
-  
-  const handleOptionChange = (event) => {
-    selectedOption(event.target.value);
-  };
 
   return (
-    <div className="background">
-      <h1>Blogs publicados</h1>
-      <hr />
-      <Suspense fallback={<h1>Loading...</h1>}>
-        {posts.map((post, index) => {
-          return(
-            <DashCard key={index} id={post.id} name={post.title} image={post.picture} navigator={navigator}/>
-          )
-        })}
-      </Suspense>
-    </div>
-  );
+    <>
+      {content}
+    </>
+  )
 };
 
 export default Dashboard;
