@@ -62,6 +62,11 @@ function EditPost({ selectedPost, navigator }) {
     };
 
     async function deletePost() {
+
+        if (!confirm("¿Estás seguro de que quieres eliminar este post?")) {
+            return;
+        };
+
         const apiURL = `http://localhost:22217/admin/posts/${selectedPost}`;
 
         try {

@@ -58,7 +58,7 @@ function CreatePost({ navigator }) {
         <div id="editPostCard">
             <>
                 <input type="text" style={{gridRow: "1", gridColumn: "1 / span 2"}} placeholder="Título" value={title} onChange={handleTitleChange}/>
-                <input type="text" style={{gridColumn: "2", gridRow: "2", justifySelf: "center", alignSelf: "center", boxShadow: "0.2vw 0.2vw 0.5vw 0.2vw #0000002f", borderRadius: "0.25vw"}} placeholder="URL de imagen" value={picture} onChange={handlePictureChange}/>
+                <input type="text" style={{gridColumn: "2", gridRow: "2", justifySelf: "center", alignSelf: "center", borderRadius: "0.25vw"}} placeholder="URL de imagen" value={picture} onChange={handlePictureChange}/>
                 <textarea name="description" id="decriptionText" cols="30"  rows="10" style={{gridColumn: "1", gridRow: "2"}} placeholder="Descripción" value={description} onChange={handleDescriptionChange}></textarea>
                 <h3 style={{gridRow: "3", gridColumn: "1 / span 2"}}>Puntos a destacar</h3>
                 <textarea name="points" id="pointsText" cols="30" rows="10" style={{gridRow: "4", gridColumn: "1 / span 2"}} placeholder="Puntos" value={points} onChange={handlePointsChange}></textarea>
