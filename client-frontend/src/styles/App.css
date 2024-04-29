@@ -9,7 +9,7 @@
 }
 
 .background {
-  width: 60%;
+  width: 60em;
   height: fit-content;
   background-color: white;
   border: 0.2vw solid transparent;
@@ -24,8 +24,10 @@
   margin-top: 10em;
   margin-bottom: 10em;
 
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 1024px) {
     width: 90%;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -45,11 +47,10 @@
   background-size: 100%;
   background-position: center;
   background-position-y: top;
-  background-color: aquamarine;
   margin: 5%;
   background-repeat: no-repeat;
-  height: 25em;
-  width: 40%;
+  height: 15em;
+  width: 24em;
   box-shadow: 0.2vw 0.2vw 0.5vw 0.2vw #0000002f;
   border-radius: 0.25vw;
   display: flex;
@@ -66,11 +67,35 @@
   transform: scale(0.9);
 }
 
-.dashCard-Img {
+.createCard-Div {
+  background-size: 25%;
+  background-position: center;
+  background-position-y: center;
+  margin: 5%;
+  background-repeat: no-repeat;
+  height: 15em;
+  width: 40%;
+  box-shadow: 0.2vw 0.2vw 0.5vw 0.2vw #0000002f;
+  border-radius: 0.25vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s;
+}
+.createCard-Div:hover {
+  transform: scale(1.1);
+}
+.createCard-Div:active {
+  transition: transform 0.1s;
+  transform: scale(0.9);
+}
+
+/* .createCard-Img {
   width: 40%;
   box-shadow: 0.5vw 0.5vw var(--LIGHTBLUE);
   border-radius: 0.25vw;
-}
+} */
 
 #postCard {
   width: 60%;
@@ -89,4 +114,11 @@
   grid-column-gap: 2%;
   margin-top: 10em;
   margin-bottom: 10em;
+  transition: all 1s;
+
+  @media screen and (max-width: 1024px) {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
 }
