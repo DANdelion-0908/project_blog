@@ -114,6 +114,7 @@
   grid-column-gap: 2%;
   margin-top: 10em;
   margin-bottom: 10em;
+  transition: all 1s;
 
   @media screen and (max-width: 1024px) {
     width: 90%;
