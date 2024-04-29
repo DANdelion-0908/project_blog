@@ -45,7 +45,6 @@
   background-size: 100%;
   background-position: center;
   background-position-y: top;
-  background-color: aquamarine;
   margin: 5%;
   background-repeat: no-repeat;
   height: 25em;
@@ -66,7 +65,31 @@
   transform: scale(0.9);
 }
 
-.dashCard-Img {
+.createCard-Div {
+  background-size: 25%;
+  background-position: center;
+  background-position-y: center;
+  margin: 5%;
+  background-repeat: no-repeat;
+  height: 25em;
+  width: 40%;
+  box-shadow: 0.2vw 0.2vw 0.5vw 0.2vw #0000002f;
+  border-radius: 0.25vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s;
+}
+.createCard-Div:hover {
+  transform: scale(1.1);
+}
+.createCard-Div:active {
+  transition: transform 0.1s;
+  transform: scale(0.9);
+}
+
+.createCard-Img {
   width: 40%;
   box-shadow: 0.5vw 0.5vw var(--LIGHTBLUE);
   border-radius: 0.25vw;
@@ -87,6 +110,28 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-column-gap: 2%;
+  margin-top: 10em;
+  margin-bottom: 10em;
+}
+
+#editPostCard {
+  width: 60%;
+  height: fit-content;
+  background-color: white;
+  border: 0.2vw solid transparent;
+  box-shadow: 0.2vw 0.2vw 0.5vw 0.2vw #0000002f;
+  border-radius: 0.25vw;
+  padding: 3%;
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-align: start;
+  overflow-wrap: break-word;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-column-gap: 2%;
+  grid-row-gap: 4%;
   margin-top: 10em;
   margin-bottom: 10em;
 }

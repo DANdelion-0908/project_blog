@@ -35,10 +35,10 @@ app.get('/user/posts', async (req, res) => {
 
 app.put('/admin/posts/:postId', async (req, res) => {
   const {postId} = req.params;
-  const {title, picture, post_description, points} = req.body;
+  const {title, post_description, points} = req.body;
 
   try {
-    const post = await putPost(postId, title, picture, post_description, points);
+    const post = await putPost(postId, title, post_description, points);
     res.status(201).json(post);
   } catch (error) {
     console.error(error);

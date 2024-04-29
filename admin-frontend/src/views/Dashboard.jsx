@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DashCard from "../components/DashCard";
 import { Suspense } from "react";
+import CreateCard from "../components/CreateCard";
 
 function Dashboard({ navigator }) {
   const apiURL = 'http://localhost:22217/user/posts';
@@ -34,6 +35,7 @@ function Dashboard({ navigator }) {
                   <DashCard key={index} id={post.id} name={post.title} image={post.picture} navigator={navigator}/>
                 );
               })}
+              <CreateCard navigator={navigator}/>
             </Suspense>
           </div>
         </>

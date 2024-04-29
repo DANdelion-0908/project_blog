@@ -1,7 +1,9 @@
-function DashCard({ id, image, name, setBlog }) {
+function DashCard({ id, image, name, navigator }) {
+
     const handleBlogSelection = () => {
-        console.log(`ID: ${id} Nombre: ${name}`)
-        setBlog(id);
+        console.log(`ID: ${id} Nombre: ${name}`);
+        localStorage.setItem("postId", id);
+        navigator("post");
     };
 
     return(

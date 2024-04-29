@@ -23,6 +23,6 @@ export async function getPost(id) {
 
 export async function putPost(id, title, post_description, points) {
     const [result] = await conn.query("UPDATE posts SET title = (?), post_description = (?), points = (?) WHERE id = (?);",
-     [title, picture, post_description, points, id])
+     [title, post_description, points, id])
     return result
 }
