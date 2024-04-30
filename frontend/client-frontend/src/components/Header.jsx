@@ -1,4 +1,4 @@
-import logo from '../assets/dans_logo.png';
+import logo from '../../../assets/dans_logo.png';
 
 function Header({ navigator }) {
 

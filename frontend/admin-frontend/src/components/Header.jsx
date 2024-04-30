@@ -1,11 +1,17 @@
-import logo from '../assets/dans_logo.png';
+import logo from '../../../assets/dans_logo.png';
 
-function Header({ navigator }) {
+function AdminHeader({ navigator }) {
 
     const handleDashboardNavigation = () => {
-        navigator("dashboard");
-        localStorage.clear()
+        navigator("admin/dashboard");
+        localStorage.removeItem("postId")
     };
+
+    const handleLogout = () => {
+        localStorage.removeItem("isVerified");
+        alert("Sesión terminada.")
+        navigator("dashboard")
+    }
 
     return(
         <header>
@@ -13,11 +19,11 @@ function Header({ navigator }) {
             <nav className="header-Navigator">
                 <button className="nav-Button" onClick={handleDashboardNavigation}>Inicio</button>
                 <button className="nav-Button">Top 5</button>
-                <button className="nav-Button">Cerrar Sesión</button>
+                <button className="nav-Button" onClick={handleLogout}>Cerrar Sesión</button>
             </nav>
             <p>Logo 2</p>
     </header>
     );
 };
 
-export default Header;
+export default AdminHeader;

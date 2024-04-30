@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function EditPost({ selectedPost, navigator }) {
+function AdminEditPost({ selectedPost, navigator }) {
     const [post, setPost] = useState([]);
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -54,7 +54,7 @@ function EditPost({ selectedPost, navigator }) {
             };
 
             alert("Post actualizado correctamente.");
-            navigator("post")
+            navigator("admin/post")
 
         } catch (error) {
             console.error(error);
@@ -83,7 +83,7 @@ function EditPost({ selectedPost, navigator }) {
             }
 
             alert("Post eliminado correctamente.")
-            navigator("dashboard");
+            navigator("admin/dashboard");
             
         } catch (error) {
             console.error(error);
@@ -118,7 +118,7 @@ function EditPost({ selectedPost, navigator }) {
                   <h3 style={{gridRow: "3", gridColumn: "1 / span 2"}}>Puntos a destacar</h3>
                   <textarea name="points" id="pointsText" cols="30" rows="10" style={{gridRow: "4", gridColumn: "1 / span 2"}} value={points} onChange={handlePointsChange}></textarea>
                   <button onClick={updatePost}>Guardar</button>   
-                  <button onClick={() => navigator("dashboard")}>Cancelar</button>             
+                  <button onClick={() => navigator("admin/dashboard")}>Cancelar</button>             
                 </>
             ) : (
                 <p>Loading...</p>
@@ -127,4 +127,4 @@ function EditPost({ selectedPost, navigator }) {
     );
 };
 
-export default EditPost;
+export default AdminEditPost;

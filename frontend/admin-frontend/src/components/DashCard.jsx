@@ -3,7 +3,7 @@ function DashCard({ id, image, name, navigator }) {
     const handleBlogSelection = () => {
         console.log(`ID: ${id} Nombre: ${name}`);
         localStorage.setItem("postId", id);
-        navigator("post");
+        navigator("admin/post");
     };
 
     return(

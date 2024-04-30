@@ -49,7 +49,8 @@ function Login({ navigator }) {
 
 
             console.log(response);
-            navigator("")
+            localStorage.setItem("isVerified", "true")
+            navigator("admin/dashboard")
 
 
         } catch (error) {

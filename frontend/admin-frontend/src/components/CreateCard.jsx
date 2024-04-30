@@ -1,9 +1,9 @@
-import createIcon from '../assets/plus-sign.png';
+import createIcon from '../../../assets/plus-sign.png';
 
 function CreateCard({ navigator }) {
 
     const handleBlogCreation = () => {
-        navigator("create");
+        navigator("admin/create");
     };
 
     return(

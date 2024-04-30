@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function CreatePost({ navigator }) {
+function AdminCreatePost({ navigator }) {
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [points, setPoints] = useState("");
@@ -47,7 +47,7 @@ function CreatePost({ navigator }) {
           };
 
           alert("Post creado exitosamente.");
-          navigator("dashboard");
+          navigator("admin/dashboard");
 
         } catch (error) {
             console.error(error);
@@ -63,10 +63,10 @@ function CreatePost({ navigator }) {
                 <h3 style={{gridRow: "3", gridColumn: "1 / span 2"}}>Puntos a destacar</h3>
                 <textarea name="points" id="pointsText" cols="30" rows="10" style={{gridRow: "4", gridColumn: "1 / span 2"}} placeholder="Puntos" value={points} onChange={handlePointsChange}></textarea>
                 <button onClick={createPost}>Guardar</button> 
-                <button onClick={() => navigator("dashboard")}>Cancelar</button>             
+                <button onClick={() => navigator("admin/dashboard")}>Cancelar</button>             
             </>
         </div>
     );
 };
 
-export default CreatePost;
+export default AdminCreatePost;

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Post({ selectedPost, navigator }) {
+function AdminPost({ selectedPost, navigator }) {
   const [post, setPost] = useState([]);
 
   async function viewPost() {
@@ -29,7 +29,7 @@ function Post({ selectedPost, navigator }) {
   };
 
   const handleEdit = () => {
-    navigator("edit");
+    navigator("admin/edit");
   };
   
   useEffect(() => {
@@ -55,4 +55,4 @@ function Post({ selectedPost, navigator }) {
   );
 }
 
-export default Post;
+export default AdminPost;

@@ -3,7 +3,7 @@ import DashCard from "../components/DashCard";
 import { Suspense } from "react";
 import CreateCard from "../components/CreateCard";
 
-function Dashboard({ navigator }) {
+function AdminDashboard({ navigator }) {
   const apiURL = 'http://localhost:22217/user/posts';
 
   const [content, setContent] = useState(null);
@@ -59,4 +59,4 @@ function Dashboard({ navigator }) {
   )
 };
 
-export default Dashboard;
+export default AdminDashboard;
