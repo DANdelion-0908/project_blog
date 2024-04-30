@@ -30,6 +30,9 @@ function Router() {
         case "register":
             content = <Register navigator={navigator}/>
             break;
+
+        case "admin/dashboard":
+            content = <
     
         default:
             break;

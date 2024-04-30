@@ -49,6 +49,7 @@ function Login({ navigator }) {
 
 
             console.log(response);
+            navigator("")
 
 
         } catch (error) {
