@@ -3,6 +3,8 @@ import Dashboard from "./views/Dashboard";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Post from "./views/Post";
+import Login from "./views/Login";
+import Register from "./views/Register";
 
 function Router() {
     const [page, setPage] = useState("dashboard");
@@ -20,6 +22,14 @@ function Router() {
 
         case "post":
             content = <Post selectedPost={parseInt(localStorage.getItem("postId"))}/>
+
+        case "login":
+            content = <Login navigator={navigator}/>
+            break;
+
+        case "register":
+            content = <Register navigator={navigator}/>
+            break;
     
         default:
             break;

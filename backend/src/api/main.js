@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAllPosts, createPost, deletePost, getPost, putPost } from '../api/dbs.js'
+import { getAllPosts, createPost, deletePost, getPost, putPost, verifyUser, registerUser } from '../api/dbs.js'
 import cors from 'cors'
 
 const app = express()
@@ -69,6 +69,27 @@ app.get('/user/posts/:postID', async (req, res) => {
     console.error(error)
   } 
 })
+
+app.post('/user/login', async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    const verifiedUser = await verifyUser(email, password);
+    res.status(200).json(verifiedUser);
+  } catch (error) {
+    res.status(500).json({ error: error });
+  };
+});
+
+app.post('/user/register', async (req, res) => {
+  const { name, email, password } = req.body;
+  try {
+      const registeredUser = await registerUser(name, email, password);
+      res.status(201).json(registeredUser);
+
+  } catch (error) {
+    res.status(500).json({ error: error });
+  }
+});
 
 async function unimplementedMethod(req, res) {
   if (req.method != "GET" && req.method != "POST" && req.method != "PUT" && req.method != "DELETE") {

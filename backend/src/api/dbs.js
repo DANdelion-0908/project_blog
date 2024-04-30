@@ -26,3 +26,32 @@ export async function putPost(id, title, post_description, points) {
      [title, post_description, points, id])
     return result
 }
+
+export async function verifyUser(email, password) {
+    try {
+        const [result] = await conn.query("SELECT * FROM users WHERE email = (?) AND password = (?)",
+        [email, password]);
+    
+        if (result.rows.length() > 0) {
+            return true;
+    
+        } else {
+            return false;
+        };
+        
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+export async function registerUser(name, email, password) {
+    try {
+        const [result] = await conn.query("INSERT INTO users (name, email, password) VALUES ((?), (?), (?))",
+        [name, email, password])
+    
+        return result;
+        
+    } catch (error) {
+        console.error(error);
+    }
+}
