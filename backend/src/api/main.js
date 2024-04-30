@@ -74,7 +74,7 @@ app.post('/user/login', async (req, res) => {
   const { email, password } = req.body;
   try {
     const verifiedUser = await verifyUser(email, password);
-    res.status(200).json(verifiedUser);
+    res.status(200).send(verifiedUser);
   } catch (error) {
     res.status(500).json({ error: error });
   };

@@ -24,6 +24,11 @@ function Router() {
 
     switch (page) {
         case "dashboard":
+            if (localStorage.getItem("isVerified") === "true") {
+                content = <AdminDashboard navigator={navigator}/>
+                break;
+            }
+            
             content = <Dashboard navigator={navigator}/>
             break;
 
@@ -68,7 +73,7 @@ function Router() {
                 <Header navigator={navigator}/>
             )}
             {content}
-            {page != 'dashboard' && <Footer />}
+            {page != 'dashboard' && page != 'admin/dashboard' && <Footer />}
         </>
     )
 };

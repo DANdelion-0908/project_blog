@@ -44,7 +44,18 @@ function Register({ navigator }) {
                 return;
             };
 
-            alert("Usuario registrado exitosamente.");
+            const data = await response.json();
+            console.log(data);
+
+            if (data.affectedRows === 1) {
+                alert("Usuario registrado exitosamente.");
+                navigator("login");
+                return;
+            
+            } else {
+                alert(`Error: ${data.message}`);
+                return;
+            }
 
         } catch (error) {
             console.error(error);

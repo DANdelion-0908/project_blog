@@ -31,13 +31,8 @@ export async function verifyUser(email, password) {
     try {
         const [result] = await conn.query("SELECT * FROM users WHERE email = (?) AND password = (?)",
         [email, password]);
-    
-        if (result.rows.length() > 0) {
-            return true;
-    
-        } else {
-            return false;
-        };
+        console.log(result);
+        return result;
         
     } catch (error) {
         console.error(error);
@@ -52,6 +47,11 @@ export async function registerUser(name, email, password) {
         return result;
         
     } catch (error) {
-        console.error(error);
+        if (error.code === 'ER_DUP_ENTRY') {
+            return { success: false, message: 'El correo electrónico ya está registrado.' };
+        } else {
+            console.error('Error registering users', error);
+            throw error;
+        }
     }
 }

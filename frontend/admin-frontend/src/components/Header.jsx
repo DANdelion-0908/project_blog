@@ -15,13 +15,13 @@ function AdminHeader({ navigator }) {
 
     return(
         <header>
-            <img src={logo} alt="Logo del blog" height={"60%"}/>
+            <img id='headerImg' src={logo} alt="Logo del blog" height={"60%"}/>
             <nav className="header-Navigator">
                 <button className="nav-Button" onClick={handleDashboardNavigation}>Inicio</button>
                 <button className="nav-Button">Top 5</button>
                 <button className="nav-Button" onClick={handleLogout}>Cerrar Sesión</button>
             </nav>
-            <p>Logo 2</p>
+            <p>Bienvenido, {localStorage.getItem("username")}</p>
     </header>
     );
 };

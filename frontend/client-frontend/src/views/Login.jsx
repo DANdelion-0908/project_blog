@@ -45,12 +45,22 @@ function Login({ navigator }) {
                 alert("Ocurrió un error al iniciar sesión.");
                 console.log(response);
                 return;
+            }
+
+            const data = await response.json();
+            console.log(data);
+
+            if (data.length > 0) {
+                localStorage.setItem("isVerified", "true")
+                localStorage.setItem("username", data[0].name)
+                navigator("admin/dashboard")
+                return;  
+            
+            } else {
+                alert("Credenciales Inválidas. Intenta de nuevo.")
+                return;
             };
 
-
-            console.log(response);
-            localStorage.setItem("isVerified", "true")
-            navigator("admin/dashboard")
 
 
         } catch (error) {

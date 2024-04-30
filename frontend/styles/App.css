@@ -50,7 +50,7 @@
   margin: 5%;
   background-repeat: no-repeat;
   height: 15em;
-  width: 24em;
+  width: 20em;
   box-shadow: 0.2vw 0.2vw 0.5vw 0.2vw #0000002f;
   border-radius: 0.25vw;
   display: flex;
@@ -74,7 +74,7 @@
   margin: 5%;
   background-repeat: no-repeat;
   height: 15em;
-  width: 40%;
+  width: 20rem;
   box-shadow: 0.2vw 0.2vw 0.5vw 0.2vw #0000002f;
   border-radius: 0.25vw;
   display: flex;
@@ -149,4 +149,8 @@
   display: flex;
   flex-direction: column;
   text-align: start;
+}
+
+#headerImg {
+  height: 40%;
 }
