@@ -40,7 +40,6 @@ function AdminDashboard({ navigator }) {
           </div>
         </>
       )
-      console.log(data);
       
     } catch (error) {
       console.error(error)
