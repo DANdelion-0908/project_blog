@@ -1,5 +1,7 @@
 import logo from '../../../assets/dans_logo.png';
 
+import { PropTypes } from "prop-types";
+
 function Header({ navigator }) {
 
     const handleDashboardNavigation = () => {
@@ -21,5 +23,9 @@ function Header({ navigator }) {
     </header>
     );
 }
+
+Header.propTypes = {
+    navigator: PropTypes.func.isRequired
+};
 
 export default Header;

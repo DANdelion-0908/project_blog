@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import DashCard from "../components/DashCard";
 import { Suspense } from "react";
+import { PropTypes } from "prop-types";
 
 function Dashboard({ navigator }) {
   const apiURL = 'http://localhost:22217/user/posts';
@@ -55,5 +56,9 @@ function Dashboard({ navigator }) {
     </>
   )
 }
+
+Dashboard.propTypes = {
+  navigator: PropTypes.func.isRequired
+};
 
 export default Dashboard;

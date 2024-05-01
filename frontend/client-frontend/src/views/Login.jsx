@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SHA256 } from 'crypto-js';
+import { PropTypes } from "prop-types";
 
 function Login({ navigator }) {
     const [email, setEmail] = useState("");
@@ -82,5 +83,9 @@ function Login({ navigator }) {
         </div>
     );
 }
+
+Login.propTypes = {
+    navigator: PropTypes.func.isRequired
+};
 
 export default Login;

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { PropTypes } from "prop-types";
 
 function Post({ selectedPost }) {
     const [post, setPost] = useState([]);
@@ -50,5 +51,9 @@ function Post({ selectedPost }) {
         </div>
     );
 }
+
+Post.propTypes = {
+  selectedPost: PropTypes.number.isRequired
+};
 
 export default Post;

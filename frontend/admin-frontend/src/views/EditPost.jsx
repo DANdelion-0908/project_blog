@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { PropTypes } from "prop-types";
 
 function AdminEditPost({ selectedPost, navigator }) {
     const [post, setPost] = useState([]);
@@ -125,5 +126,10 @@ function AdminEditPost({ selectedPost, navigator }) {
         </div>
     );
 }
+
+AdminEditPost.propTypes = {
+    selectedPost: PropTypes.number.isRequired,
+    navigator: PropTypes.func.isRequired
+};
 
 export default AdminEditPost;

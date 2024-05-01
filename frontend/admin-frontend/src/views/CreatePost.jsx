@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PropTypes } from "prop-types";
 
 function AdminCreatePost({ navigator }) {
     const [title, setTitle] = useState("");
@@ -68,5 +69,9 @@ function AdminCreatePost({ navigator }) {
         </div>
     );
 }
+
+AdminCreatePost.propTypes = {
+    navigator: PropTypes.func.isRequired
+};
 
 export default AdminCreatePost;

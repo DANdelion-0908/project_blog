@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import DashCard from "../components/DashCard";
 import { Suspense } from "react";
 import CreateCard from "../components/CreateCard";
+import { PropTypes } from "prop-types";
 
 function AdminDashboard({ navigator }) {
   const apiURL = 'http://localhost:22217/user/posts';
@@ -57,5 +58,9 @@ function AdminDashboard({ navigator }) {
     </>
   )
 }
+
+AdminDashboard.propTypes = {
+  navigator: PropTypes.func.isRequired
+};
 
 export default AdminDashboard;

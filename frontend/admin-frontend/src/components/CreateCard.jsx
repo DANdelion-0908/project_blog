@@ -1,5 +1,7 @@
 import createIcon from '../../../assets/plus-sign.png';
 
+import { PropTypes } from "prop-types";
+
 function CreateCard({ navigator }) {
 
     const handleBlogCreation = () => {
@@ -14,5 +16,9 @@ function CreateCard({ navigator }) {
         </div>
     );
 }
+
+CreateCard.propTypes = {
+    navigator: PropTypes.func.isRequired
+};
 
 export default CreateCard;

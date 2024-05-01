@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { SHA256 } from "crypto-js";
+import { PropTypes } from "prop-types";
 
 function Register({ navigator }) {
     const [email, setEmail] = useState("");
@@ -78,5 +79,9 @@ function Register({ navigator }) {
         </div>
     );
 }
+
+Register.propTypes = {
+    navigator: PropTypes.func.isRequired
+};
 
 export default Register;

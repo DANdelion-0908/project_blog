@@ -1,3 +1,5 @@
+import { PropTypes } from "prop-types";
+
 function DashCard({ id, image, name, navigator }) {
 
     const handleBlogSelection = () => {
@@ -13,5 +15,12 @@ function DashCard({ id, image, name, navigator }) {
         </div>
     );
 }
+
+DashCard.propTypes = {
+    id: PropTypes.number.isRequired,
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    navigator: PropTypes.func.isRequired
+};
 
 export default DashCard;

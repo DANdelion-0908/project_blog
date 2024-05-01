@@ -1,5 +1,7 @@
 import logo from '../../../assets/dans_logo.png';
 
+import { PropTypes } from 'prop-types'
+
 function AdminHeader({ navigator }) {
 
     const handleDashboardNavigation = () => {
@@ -24,5 +26,9 @@ function AdminHeader({ navigator }) {
     </header>
     );
 }
+
+AdminHeader.propTypes = {
+    navigator: PropTypes.func.isRequired
+};
 
 export default AdminHeader;
