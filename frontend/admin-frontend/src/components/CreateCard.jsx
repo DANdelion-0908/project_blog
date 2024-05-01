@@ -13,6 +13,6 @@ function CreateCard({ navigator }) {
             </div>
         </div>
     );
-};
+}
 
 export default CreateCard;

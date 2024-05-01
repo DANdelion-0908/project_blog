@@ -23,7 +23,7 @@ function Login({ navigator }) {
         if (email == "" || password == "") {
             alert("Asegúrate de llenar todos los campos.");
             return;
-        };
+        }
 
         try {
             const response = await fetch(apiURL, {
@@ -57,14 +57,14 @@ function Login({ navigator }) {
             } else {
                 alert("Credenciales Inválidas. Intenta de nuevo.")
                 return;
-            };
+            }
 
 
 
         } catch (error) {
             console.error(error);
-        };
-    };
+        }
+    }
 
     return (
         <div className="background">
@@ -81,6 +81,6 @@ function Login({ navigator }) {
             </div>
         </div>
     );
-};
+}
 
 export default Login;

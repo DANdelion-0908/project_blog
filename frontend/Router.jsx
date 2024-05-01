@@ -63,7 +63,7 @@ function Router() {
         default:
             content = <EmptyState />
             break;
-    };
+    }
 
     return (
         <>
@@ -76,6 +76,6 @@ function Router() {
             {page != 'dashboard' && page != 'admin/dashboard' && <Footer />}
         </>
     )
-};
+}
 
 export default Router;

@@ -12,6 +12,6 @@ function DashCard({ id, image, name, navigator }) {
             </div>
         </div>
     );
-};
+}
 
 export default DashCard;

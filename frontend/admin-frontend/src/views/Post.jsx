@@ -17,15 +17,15 @@ function AdminPost({ selectedPost, navigator }) {
       if (!response.ok) {
         alert("Ocurrió un error al cargar el blog seleccionado.");
         return;
-      };
+      }
   
       const data = await response.json();
       setPost(data);
   
     } catch (error) {
       console.error(error);
-    };
-  };
+    }
+  }
 
   const handleEdit = () => {
     navigator("admin/edit");
@@ -33,7 +33,7 @@ function AdminPost({ selectedPost, navigator }) {
   
   useEffect(() => {
     viewPost();
-  }, []);  
+  });  
 
   return (
     <div id="postCard">

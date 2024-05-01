@@ -4,6 +4,6 @@ function EmptyState() {
             <h1>404 Página no encontrada</h1>
         </div>
     );
-};
+}
 
 export default EmptyState;

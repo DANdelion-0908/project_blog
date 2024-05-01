@@ -23,6 +23,6 @@ function AdminHeader({ navigator }) {
             <p>Bienvenido, {localStorage.getItem("username")}</p>
     </header>
     );
-};
+}
 
 export default AdminHeader;

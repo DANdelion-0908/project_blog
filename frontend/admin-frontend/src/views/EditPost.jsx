@@ -20,7 +20,7 @@ function AdminEditPost({ selectedPost, navigator }) {
             if (!response.ok) {
             alert("Ocurrió un error al cargar el blog seleccionado.");
             return;
-            };
+            }
         
             const data = await response.json();
             setPost(data);
@@ -28,8 +28,8 @@ function AdminEditPost({ selectedPost, navigator }) {
         } catch (error) {
             console.error(error);
 
-        };
-    };  
+        }
+    }
 
     async function updatePost() {
         const apiURL = `http://localhost:22217/admin/posts/${selectedPost}`;
@@ -50,21 +50,21 @@ function AdminEditPost({ selectedPost, navigator }) {
             if (!response.ok) {
                 alert("Ocurrió un error al actualizar el post.");
                 return;
-            };
+            }
 
             alert("Post actualizado correctamente.");
             navigator("admin/post")
 
         } catch (error) {
             console.error(error);
-        };
-    };
+        }
+    }
 
     async function deletePost() {
 
         if (!confirm("¿Estás seguro de que quieres eliminar este post?")) {
             return;
-        };
+        }
 
         const apiURL = `http://localhost:22217/admin/posts/${selectedPost}`;
 
@@ -104,7 +104,7 @@ function AdminEditPost({ selectedPost, navigator }) {
     
     useEffect(() => {
         viewPost();
-    }, []);  
+    })
     
     return(
         <div id="editPostCard">
@@ -124,6 +124,6 @@ function AdminEditPost({ selectedPost, navigator }) {
             )}
         </div>
     );
-};
+}
 
 export default AdminEditPost;

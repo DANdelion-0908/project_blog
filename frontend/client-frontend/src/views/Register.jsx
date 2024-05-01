@@ -24,7 +24,7 @@ function Register({ navigator }) {
         if (email == "" || password == "" || username == "") {
             alert("Asegúrate de llenar todos los campos.");
             return;
-        };
+        }
 
         try {
             const response = await fetch(apiURL, {
@@ -42,7 +42,7 @@ function Register({ navigator }) {
             if (!response.ok) {
                 alert("Ocurrió un error al iniciar sesión.");
                 return;
-            };
+            }
 
             const data = await response.json();
 
@@ -58,8 +58,8 @@ function Register({ navigator }) {
 
         } catch (error) {
             console.error(error);
-        };
-    };
+        }
+    }
 
     return (
         <div className="background">
@@ -77,6 +77,6 @@ function Register({ navigator }) {
             </div>
         </div>
     );
-};
+}
 
 export default Register;

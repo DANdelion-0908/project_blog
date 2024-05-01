@@ -44,14 +44,14 @@ function AdminCreatePost({ navigator }) {
           if (!response.ok) {
             alert("Ocurrió un error al crear el post.");
             return;
-          };
+          }
 
           alert("Post creado exitosamente.");
           navigator("admin/dashboard");
 
         } catch (error) {
             console.error(error);
-        };
+        }
     }
 
     return(
@@ -67,6 +67,6 @@ function AdminCreatePost({ navigator }) {
             </>
         </div>
     );
-};
+}
 
 export default AdminCreatePost;

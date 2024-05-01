@@ -20,6 +20,6 @@ function Header({ navigator }) {
             </nav>
     </header>
     );
-};
+}
 
 export default Header;

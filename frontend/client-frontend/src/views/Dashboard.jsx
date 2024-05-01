@@ -19,7 +19,7 @@ function Dashboard({ navigator }) {
       if (!response.ok) {
         alert("Ocurrió un error cargado los blogs.");
         return;
-      };
+      }
   
       const data = await response.json();
 
@@ -42,18 +42,18 @@ function Dashboard({ navigator }) {
     } catch (error) {
       console.error(error)
 
-    };
-  };
+    }
+  }
 
   useEffect(() => {
     getPosts();
-  }, []);
+  });
 
   return (
     <>
       {content}
     </>
   )
-};
+}
 
 export default Dashboard;

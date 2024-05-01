@@ -1,4 +1,4 @@
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 
 function Post({ selectedPost }) {
     const [post, setPost] = useState([]);
@@ -17,7 +17,7 @@ function Post({ selectedPost }) {
           if (!response.ok) {
             alert("Ocurrió un error al cargar el blog seleccionado.");
             return;
-          };
+          }
       
           const data = await response.json();
           setPost(data);
@@ -25,12 +25,12 @@ function Post({ selectedPost }) {
         } catch (error) {
           console.error(error);
     
-        };
-      };  
+        }
+      }
     
     useEffect(() => {
             viewPost();
-      }, []);  
+      }); 
 
     
     return(
@@ -49,6 +49,6 @@ function Post({ selectedPost }) {
             )}
         </div>
     );
-};
+}
 
 export default Post;
