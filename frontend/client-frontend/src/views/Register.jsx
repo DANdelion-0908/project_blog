@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SHA256 } from "crypto-js";
 import { PropTypes } from "prop-types";
+import { Suspense } from "react";
 
 function Register({ navigator }) {
     const [email, setEmail] = useState("");
@@ -64,18 +65,20 @@ function Register({ navigator }) {
 
     return (
         <div className="background">
-            <div id="login-Div">
-                <h1 style={{marginBottom: "5%"}}>Ingresa tus credenciales</h1>
-                <form>
-                    <label htmlFor="usernameInput">Nombre</label>
-                    <input type="text" id="usernameInput" value={username} onChange={handleUsernameChange} style={{marginBottom: "5%"}}/>
-                    <label htmlFor="emailInput">Correo Electrónico</label>
-                    <input type="email" id="emailInput" value={email} onChange={handleEmailChange} style={{marginBottom:"5%"}}/>
-                    <label htmlFor="passwordInput">Contraseña</label>
-                    <input type="password" id="passwordInput" value={password} onChange={handlePasswordChange} style={{marginBottom:"5%"}}/>
-                </form>
-                <button onClick={handleRegister}>Continuar</button>
-            </div>
+            <Suspense fallback={<div className="loader"></div>}>
+                <div id="login-Div">
+                    <h1 style={{marginBottom: "5%"}}>Ingresa tus credenciales</h1>
+                    <form>
+                        <label htmlFor="usernameInput">Nombre</label>
+                        <input type="text" id="usernameInput" value={username} onChange={handleUsernameChange} style={{marginBottom: "5%"}}/>
+                        <label htmlFor="emailInput">Correo Electrónico</label>
+                        <input type="email" id="emailInput" value={email} onChange={handleEmailChange} style={{marginBottom:"5%"}}/>
+                        <label htmlFor="passwordInput">Contraseña</label>
+                        <input type="password" id="passwordInput" value={password} onChange={handlePasswordChange} style={{marginBottom:"5%"}}/>
+                    </form>
+                    <button onClick={handleRegister}>Continuar</button>
+                </div>
+            </Suspense>
         </div>
     );
 }

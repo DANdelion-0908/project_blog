@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { PropTypes } from "prop-types";
+import { Suspense } from "react";
 
 function AdminCreatePost({ navigator }) {
     const [title, setTitle] = useState("");
@@ -58,13 +59,15 @@ function AdminCreatePost({ navigator }) {
     return(
         <div id="editPostCard">
             <>
-                <input type="text" style={{gridRow: "1", gridColumn: "1 / span 2"}} placeholder="Título" value={title} onChange={handleTitleChange}/>
-                <input type="text" style={{gridColumn: "2", gridRow: "2", justifySelf: "center", alignSelf: "center", borderRadius: "0.25vw"}} placeholder="URL de imagen" value={picture} onChange={handlePictureChange}/>
-                <textarea name="description" id="decriptionText" cols="30"  rows="10" style={{gridColumn: "1", gridRow: "2"}} placeholder="Descripción" value={description} onChange={handleDescriptionChange}></textarea>
-                <h3 style={{gridRow: "3", gridColumn: "1 / span 2"}}>Puntos a destacar</h3>
-                <textarea name="points" id="pointsText" cols="30" rows="10" style={{gridRow: "4", gridColumn: "1 / span 2"}} placeholder="Puntos" value={points} onChange={handlePointsChange}></textarea>
-                <button onClick={createPost}>Guardar</button> 
-                <button onClick={() => navigator("admin/dashboard")}>Cancelar</button>             
+                <Suspense fallback={<div className="loader"></div>}>
+                    <input type="text" style={{gridRow: "1", gridColumn: "1 / span 2"}} placeholder="Título" value={title} onChange={handleTitleChange}/>
+                    <input type="text" style={{gridColumn: "2", gridRow: "2", justifySelf: "center", alignSelf: "center", borderRadius: "0.25vw"}} placeholder="URL de imagen" value={picture} onChange={handlePictureChange}/>
+                    <textarea name="description" id="decriptionText" cols="30"  rows="10" style={{gridColumn: "1", gridRow: "2"}} placeholder="Descripción" value={description} onChange={handleDescriptionChange}></textarea>
+                    <h3 style={{gridRow: "3", gridColumn: "1 / span 2"}}>Puntos a destacar</h3>
+                    <textarea name="points" id="pointsText" cols="30" rows="10" style={{gridRow: "4", gridColumn: "1 / span 2"}} placeholder="Puntos" value={points} onChange={handlePointsChange}></textarea>
+                    <button onClick={createPost}>Guardar</button> 
+                    <button onClick={() => navigator("admin/dashboard")}>Cancelar</button>             
+                </Suspense>
             </>
         </div>
     );

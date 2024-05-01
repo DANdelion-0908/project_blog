@@ -52,7 +52,7 @@ function AdminPost({ selectedPost, navigator }) {
           </div>
         </>
       ) : (
-        <p>Loading...</p>
+        <div className="loader"></div>
       )}
     </div>
   );

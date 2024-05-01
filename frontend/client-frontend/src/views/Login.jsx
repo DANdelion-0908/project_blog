@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SHA256 } from 'crypto-js';
 import { PropTypes } from "prop-types";
+import { Suspense } from "react";
 
 function Login({ navigator }) {
     const [email, setEmail] = useState("");
@@ -69,17 +70,19 @@ function Login({ navigator }) {
 
     return (
         <div className="background">
-            <div id="login-Div">
-                <h1 style={{marginBottom: "5%"}}>Ingresa tus credenciales</h1>
-                <form>
-                    <label htmlFor="emailInput">Correo Electrónico</label>
-                    <input type="email" id="emailInput" value={email} onChange={handleEmailChange} style={{marginBottom:"5%"}}/>
-                    <label htmlFor="passwordInput">Contraseña</label>
-                    <input type="password" id="passwordInput" value={password} onChange={handlePasswordChange} style={{marginBottom:"5%"}}/>
-                </form>
-                <button onClick={handleLogin}>Continuar</button>
-                <button onClick={handleRegisterNavigation}>Registrar usuario</button>
-            </div>
+            <Suspense fallback={<div className="loader"></div>}>
+                <div id="login-Div">
+                    <h1 style={{marginBottom: "5%"}}>Ingresa tus credenciales</h1>
+                    <form>
+                        <label htmlFor="emailInput">Correo Electrónico</label>
+                        <input type="email" id="emailInput" value={email} onChange={handleEmailChange} style={{marginBottom:"5%"}}/>
+                        <label htmlFor="passwordInput">Contraseña</label>
+                        <input type="password" id="passwordInput" value={password} onChange={handlePasswordChange} style={{marginBottom:"5%"}}/>
+                    </form>
+                    <button onClick={handleLogin}>Continuar</button>
+                    <button onClick={handleRegisterNavigation}>Registrar usuario</button>
+                </div>
+            </Suspense>
         </div>
     );
 }

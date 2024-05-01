@@ -30,7 +30,7 @@ function AdminDashboard({ navigator }) {
           <div className="background">
             <h1>Blogs publicados</h1>
             <hr />
-            <Suspense fallback={<h1>Loading...</h1>}>
+            <Suspense fallback={<div className="loader"></div>}>
               {data.map((post, index) => {
                 return(
                   <DashCard key={index} id={post.id} name={post.title} image={post.picture} navigator={navigator}/>

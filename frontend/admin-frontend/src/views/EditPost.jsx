@@ -105,7 +105,7 @@ function AdminEditPost({ selectedPost, navigator }) {
     
     useEffect(() => {
         viewPost();
-    })
+    });
     
     return(
         <div id="editPostCard">
@@ -121,7 +121,7 @@ function AdminEditPost({ selectedPost, navigator }) {
                   <button onClick={() => navigator("admin/dashboard")}>Cancelar</button>             
                 </>
             ) : (
-                <p>Loading...</p>
+                <div className="loader"></div>
             )}
         </div>
     );

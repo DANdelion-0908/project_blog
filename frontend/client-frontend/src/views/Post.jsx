@@ -46,7 +46,7 @@ function Post({ selectedPost }) {
                   <p style={{gridRow: "4", gridColumn: "1 / span 2"}}>{post[0].points}</p>
                 </>
             ) : (
-                <p>Loading...</p>
+                <div className="loader"></div>
             )}
         </div>
     );
