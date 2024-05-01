@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MD5 } from "crypto-js";
+import { SHA256 } from "crypto-js";
 
 function Register({ navigator }) {
     const [email, setEmail] = useState("");
@@ -35,7 +35,7 @@ function Register({ navigator }) {
                 body: JSON.stringify({
                     name: username,
                     email: email,
-                    password: password
+                    password: SHA256(password).toString()
                 })
             })
             
@@ -45,7 +45,6 @@ function Register({ navigator }) {
             };
 
             const data = await response.json();
-            console.log(data);
 
             if (data.affectedRows === 1) {
                 alert("Usuario registrado exitosamente.");

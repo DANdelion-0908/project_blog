@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CryptoJS from 'crypto-js';
+import { SHA256 } from 'crypto-js';
 
 function Login({ navigator }) {
     const [email, setEmail] = useState("");
@@ -33,7 +33,7 @@ function Login({ navigator }) {
                 },
                 body: JSON.stringify({
                     email: email,
-                    password: password
+                    password: SHA256(password).toString()
                 })
             })
             
@@ -43,12 +43,10 @@ function Login({ navigator }) {
             
             } else if (response.status != 200) {
                 alert("Ocurrió un error al iniciar sesión.");
-                console.log(response);
                 return;
             }
 
             const data = await response.json();
-            console.log(data);
 
             if (data.length > 0) {
                 localStorage.setItem("isVerified", "true")
