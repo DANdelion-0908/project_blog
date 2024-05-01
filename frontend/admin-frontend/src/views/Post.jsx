@@ -47,6 +47,9 @@ function AdminPost({ selectedPost, navigator }) {
           <p style={{gridColumn: "1", gridRow: "2"}}>{post[0].post_description}</p>
           <h3 style={{gridRow: "3", gridColumn: "1 / span 2"}}>Puntos a destacar</h3>
           <p style={{gridRow: "4", gridColumn: "1 / span 2"}}>{post[0].points}</p>
+          <div style={{textAlign: "left", justifySelf: "flex-end", gridColumn: "2"}}>
+            <p>Fecha de Publicación: {post[0].created_at}</p>
+          </div>
         </>
       ) : (
         <p>Loading...</p>
