@@ -3,8 +3,14 @@ import { PropTypes } from "prop-types";
 
 function AdminEditPost({ selectedPost, navigator }) {
     const [post, setPost] = useState([]);
+
+    const [originalTitle, setOriginalTitle] = useState("");
     const [title, setTitle] = useState("");
+
+    const [originalDescription, setOriginalDescription] = useState("");
     const [description, setDescription] = useState("");
+
+    const [originalPoints, setOriginalPoints] = useState("");
     const [points, setPoints] = useState("");
 
     async function viewPost() {
@@ -25,10 +31,18 @@ function AdminEditPost({ selectedPost, navigator }) {
         
             const data = await response.json();
             setPost(data);
+
+            setOriginalDescription(data[0].post_description);
+            setDescription(data[0].post_description);
+
+            setOriginalTitle(data[0].title);
+            setTitle(data[0].title);
+
+            setOriginalPoints(data[0].points);
+            setPoints(data[0].points);
         
         } catch (error) {
             console.error(error);
-
         }
     }
 
@@ -61,35 +75,6 @@ function AdminEditPost({ selectedPost, navigator }) {
         }
     }
 
-    async function deletePost() {
-
-        if (!confirm("¿Estás seguro de que quieres eliminar este post?")) {
-            return;
-        }
-
-        const apiURL = `http://localhost:22217/admin/posts/${selectedPost}`;
-
-        try {
-            const response = await fetch(apiURL, {
-                method: 'DELETE',
-                headers: {
-                    'Content-type': 'application/json'
-                }
-            })
-
-            if (!response.ok) {
-                alert("Ocurrió un error al eliminar el post.")
-                return;
-            }
-
-            alert("Post eliminado correctamente.")
-            navigator("admin/dashboard");
-            
-        } catch (error) {
-            console.error(error);
-        }
-    }
-
     const handleTitleChange = (e) => {
         setTitle(e.target.value);
     };
@@ -105,20 +90,19 @@ function AdminEditPost({ selectedPost, navigator }) {
     
     useEffect(() => {
         viewPost();
-    });
+    }, []);
     
     return(
         <div id="editPostCard">
             {post.length > 0 ? (
                 <>
-                  <input type="text" style={{gridRow: "1", gridColumn: "1 / span 2"}} value={title} onChange={handleTitleChange}/>
-                  <button onClick={deletePost} style={{gridRow: "1", gridColumn: "2", width: "auto", justifySelf: "flex-end"}}>Eliminar</button>
+                  <textarea name="title" id="titleText" cols="10" rows="2" style={{gridRow: "1", gridColumn: "1 / span 2"}} value={title} onChange={handleTitleChange}>{originalTitle}</textarea>
                   <img style={{gridColumn: "2", gridRow: "2", justifySelf: "center", alignSelf: "center", boxShadow: "0.2vw 0.2vw 0.5vw 0.2vw #0000002f", borderRadius: "0.25vw"}} src={post[0].picture} alt="GameImage" width={"100%"}/>
-                  <textarea name="description" id="decriptionText" cols="30"  rows="10" style={{gridColumn: "1", gridRow: "2"}} value={description} onChange={handleDescriptionChange}></textarea>
+                  <textarea name="description" id="decriptionText" cols="30"  rows="10" style={{gridColumn: "1", gridRow: "2"}} value={description} onChange={handleDescriptionChange}>{originalDescription}</textarea>
                   <h3 style={{gridRow: "3", gridColumn: "1 / span 2"}}>Puntos a destacar</h3>
-                  <textarea name="points" id="pointsText" cols="30" rows="10" style={{gridRow: "4", gridColumn: "1 / span 2"}} value={points} onChange={handlePointsChange}></textarea>
+                  <textarea name="points" id="pointsText" cols="30" rows="10" style={{gridRow: "4", gridColumn: "1 / span 2"}} value={points} onChange={handlePointsChange}>{originalPoints}</textarea>
                   <button onClick={updatePost}>Guardar</button>   
-                  <button onClick={() => navigator("admin/dashboard")}>Cancelar</button>             
+                  <button onClick={() => navigator("admin/post")}>Cancelar</button>             
                 </>
             ) : (
                 <div className="loader"></div>
