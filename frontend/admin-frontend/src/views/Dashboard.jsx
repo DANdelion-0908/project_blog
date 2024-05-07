@@ -5,7 +5,7 @@ import CreateCard from "../components/CreateCard";
 import { PropTypes } from "prop-types";
 
 function AdminDashboard({ navigator }) {
-  const apiURL = 'http://localhost:22217/user/posts';
+  const apiURL = 'http://localhost:2048/user/posts';
 
   const [content, setContent] = useState(null);
 

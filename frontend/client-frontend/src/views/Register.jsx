@@ -21,7 +21,7 @@ function Register({ navigator }) {
     };
 
     async function handleRegister() {
-        const apiURL = 'http://localhost:22217/user/register';
+        const apiURL = 'http://localhost:2048/user/register';
 
         if (email == "" || password == "" || username == "") {
             alert("Asegúrate de llenar todos los campos.");

@@ -20,7 +20,7 @@ function Login({ navigator }) {
     };
 
     async function handleLogin() {
-        const apiURL = 'http://localhost:22217/user/login';
+        const apiURL = 'http://localhost:2048/user/login';
 
         if (email == "" || password == "") {
             alert("Asegúrate de llenar todos los campos.");

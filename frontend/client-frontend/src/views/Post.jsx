@@ -5,7 +5,7 @@ function Post({ selectedPost }) {
     const [post, setPost] = useState([]);
 
     async function viewPost() {
-        const apiURL = `http://localhost:22217/user/posts/${selectedPost}`;
+        const apiURL = `http://localhost:2048/user/posts/${selectedPost}`;
 
         try {
           const response = await fetch(apiURL, {

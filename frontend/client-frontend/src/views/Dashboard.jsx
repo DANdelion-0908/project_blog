@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { PropTypes } from "prop-types";
 
 function Dashboard({ navigator }) {
-  const apiURL = 'http://localhost:22217/user/posts';
+  const apiURL = 'http://localhost:2048/user/posts';
 
   const [content, setContent] = useState(null);
 

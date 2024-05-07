@@ -5,7 +5,7 @@ function AdminPost({ selectedPost, navigator }) {
   const [post, setPost] = useState([]);
 
   async function viewPost() {
-    const apiURL = `http://localhost:22217/user/posts/${selectedPost}`;
+    const apiURL = `http://localhost:2048/user/posts/${selectedPost}`;
 
     try {
       const response = await fetch(apiURL, {
@@ -34,7 +34,7 @@ function AdminPost({ selectedPost, navigator }) {
         return;
     }
 
-    const apiURL = `http://localhost:22217/admin/posts/${selectedPost}`;
+    const apiURL = `http://localhost:2048/admin/posts/${selectedPost}`;
 
     try {
       const response = await fetch(apiURL, {

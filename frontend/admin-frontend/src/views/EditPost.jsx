@@ -14,7 +14,7 @@ function AdminEditPost({ selectedPost, navigator }) {
     const [points, setPoints] = useState("");
 
     async function viewPost() {
-        const apiURL = `http://localhost:22217/user/posts/${selectedPost}`;
+        const apiURL = `http://localhost:2048/user/posts/${selectedPost}`;
 
         try {
             const response = await fetch(apiURL, {
@@ -47,7 +47,7 @@ function AdminEditPost({ selectedPost, navigator }) {
     }
 
     async function updatePost() {
-        const apiURL = `http://localhost:22217/admin/posts/${selectedPost}`;
+        const apiURL = `http://localhost:2048/admin/posts/${selectedPost}`;
 
         try {
             const response = await fetch(apiURL, {

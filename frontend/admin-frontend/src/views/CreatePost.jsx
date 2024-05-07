@@ -27,7 +27,7 @@ function AdminCreatePost({ navigator }) {
     };
 
     async function createPost() {
-        const apiURL = `http://localhost:22217/admin/posts`;
+        const apiURL = `http://localhost:2048/admin/posts`;
 
         try {
           const response = await fetch(apiURL, {
