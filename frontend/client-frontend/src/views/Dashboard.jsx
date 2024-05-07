@@ -42,7 +42,7 @@ function Dashboard({ navigator }) {
       <hr />
       {post.length > 0 ? (
         <Suspense fallback={<div className="loader"></div>}>
-          {data.map((post, index) => {
+          {post.map((post, index) => {
             return(
               <DashCard key={index} id={post.id} name={post.title} image={post.picture} navigator={navigator}/>
             );
