@@ -5,8 +5,8 @@ import { PropTypes } from "prop-types";
 
 function Dashboard({ navigator }) {
   const apiURL = 'http://localhost:2048/user/posts';
-
-  const [content, setContent] = useState(null);
+  
+  const [post, setPost] = useState([]);
 
   async function getPosts() {
     try {
@@ -24,22 +24,8 @@ function Dashboard({ navigator }) {
   
       const data = await response.json();
 
-      setContent(
-        <>
-          <div className="background">
-            <h1>Blogs publicados</h1>
-            <hr />
-            <Suspense fallback={<div className="loader"></div>}>
-              {data.map((post, index) => {
-                return(
-                  <DashCard key={index} id={post.id} name={post.title} image={post.picture} navigator={navigator}/>
-                );
-              })}
-            </Suspense>
-          </div>
-        </>
-      )
-      
+      setPost(data);
+
     } catch (error) {
       console.error(error)
 
@@ -51,9 +37,21 @@ function Dashboard({ navigator }) {
   });
 
   return (
-    <>
-      {content}
-    </>
+    <div className="background">
+      <h1>Blogs publicados</h1>
+      <hr />
+      {post.length > 0 ? (
+        <Suspense fallback={<div className="loader"></div>}>
+          {data.map((post, index) => {
+            return(
+              <DashCard key={index} id={post.id} name={post.title} image={post.picture} navigator={navigator}/>
+            );
+          })}
+        </Suspense>
+      ) : (
+        <div className="loader"></div>
+      )}
+    </div>
   )
 }
 

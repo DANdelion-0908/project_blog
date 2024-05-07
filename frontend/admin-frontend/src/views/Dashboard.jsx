@@ -7,6 +7,8 @@ import { PropTypes } from "prop-types";
 function AdminDashboard({ navigator }) {
   const apiURL = 'http://localhost:2048/user/posts';
 
+  const [posts, setPosts] = useState([]);
+
   async function getPosts() {
     try {
       const response = await fetch(apiURL, {
@@ -22,7 +24,8 @@ function AdminDashboard({ navigator }) {
       }
   
       const data = await response.json();
-      
+      setPosts(data);
+
     } catch (error) {
       console.error(error)
 
@@ -37,14 +40,18 @@ function AdminDashboard({ navigator }) {
     <div className="background">
       <h1>Blogs publicados</h1>
       <hr />
-      <Suspense fallback={<div className="loader"></div>}>
-        {data.map((post, index) => {
-          return(
-            <DashCard key={index} id={post.id} name={post.title} image={post.picture} navigator={navigator}/>
-          );
-        })}
-        <CreateCard navigator={navigator}/>
-      </Suspense>
+      {posts.length > 0 ? (
+        <Suspense fallback={<div className="loader"></div>}>
+          {posts.map((post, index) => {
+            return(
+              <DashCard key={index} id={post.id} name={post.title} image={post.picture} navigator={navigator}/>
+            );
+          })}
+          <CreateCard navigator={navigator}/>
+        </Suspense>
+      ) : (
+        <div className="loader"></div>
+      )}
     </div>
   )
 }
