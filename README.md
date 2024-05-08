@@ -6,6 +6,8 @@
 
 Blog personal sobre mis videojuegos favoritos de todos los tiempos que contendrá posts con una descripción y puntos destacados de cada título.
 
+El blog se encuentra hosteado en un servidor y puede ser visitado mediante el siguiente [enlace](http://62.138.24.147/proyecto/22217/frontend/dist/).
+
 ## Instrucciones para ejecutar localmente
 
 La aplicación web consta de frontend (este repositorio) y un backend realizado para el laboratorio 6. Es necesario levantar el contenedor del backend para utilizar la aplicación.
