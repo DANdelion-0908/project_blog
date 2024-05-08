@@ -14,7 +14,9 @@ La aplicación web consta de frontend (este repositorio) y un backend realizado 
 
 1. Clonar el repositorio del [laboratorio 6](https://github.com/DANdelion-0908/Laboratorio6.git) que contiene el backend de la aplicación.
 
-2. Instalar las siguientes librerías utilizando el comando `npm install`:
+2. Instalar Node.js.
+
+3. Instalar las siguientes librerías utilizando el comando `npm install`:
 
     - express
 
@@ -24,15 +26,23 @@ La aplicación web consta de frontend (este repositorio) y un backend realizado 
 
     - crypto-js
 
-3. Levantar el contenedor de Docker Compose utilizando el comando `docker compose up -d`
+4. Instalar Docker Desktop.
+
+5. Renombrar el archivo `docker-compose-example.yml` a `docker-compose.yml`.
+
+6. Levantar el contenedor de Docker Compose utilizando el comando `docker compose up -d`
 
 ### Ejecutar el frontend
 
 1. Clonar este repositorio.
 
-2. Instalar node.js.
+2. Ejecutar el comando `npm i`.
 
-3. Ejecutar el comando `npm i`.
+3. Instalar las siguientes dependencias con el comando `npm install`:
+
+    - vite
+
+    - crypto-js
 
 4. Entrar mediante consola a la ruta `project_blog\frontend` y ejecutar el comando `npm run dev`.
 
@@ -48,4 +58,3 @@ La aplicación web consta de frontend (este repositorio) y un backend realizado 
 |Express|Framework de Node.js que provee un conjunto de características para el desarrollo de aplicaciones web|Brinda varios métodos HTTP que permiten utilizar API fácilmente|
 |Crypto-js|Librería de Javascript con estándares de encriptación|Permite encriptar cadenas de una forma sencilla a la vez que aumenta la seguridad de la aplicación|
 |Docker|Proyecto que permite desplegar aplicaciones dentro de contenedores de software|Simplifica enormemente la distribución de aplicaciones y permite que se ejecuten de manera autónoma|
-
