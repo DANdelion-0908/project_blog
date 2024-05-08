@@ -32,7 +32,7 @@ La aplicación web consta de frontend (este repositorio) y un backend realizado 
 
 5. Renombrar el archivo `docker-compose-example.yml` a `docker-compose.yml`.
 
-6. Levantar el contenedor de Docker Compose utilizando el comando `docker compose up -d`
+6. Levantar el contenedor de Docker Compose utilizando el comando `docker compose up -d`.
 
 ### Ejecutar el frontend
 
@@ -54,9 +54,10 @@ La aplicación web consta de frontend (este repositorio) y un backend realizado 
 
 |**Tecnología**|**Descripción**|**Razones de su uso**|
 |--------------|---------------|---------------------|
-|React|Biblioteca de Javascript diseñada para crear interfaces de usuario|Ofrece herramientas que permiten trabajar fácilmente con datos que cambian constantemente además de que permite crear componentes de una manera intuitiva|
-|Node.js|Entorno en tiempo de ejecución para la capa del servidor|Posee una documentación muy completa y muchas herramientas que vuelven cómodo ejecutar programas hechos en Javascript|
-|Vite|Herramienta de compilación que proporciona una experiencia de desarrollo rápida y ágil|Proporciona un servidor de pruebas que se actualiza rápidamente|
-|Express|Framework de Node.js que provee un conjunto de características para el desarrollo de aplicaciones web|Brinda varios métodos HTTP que permiten utilizar API fácilmente|
-|Crypto-js|Librería de Javascript con estándares de encriptación|Permite encriptar cadenas de una forma sencilla a la vez que aumenta la seguridad de la aplicación|
-|Docker|Proyecto que permite desplegar aplicaciones dentro de contenedores de software|Simplifica enormemente la distribución de aplicaciones y permite que se ejecuten de manera autónoma|
+|React|Biblioteca de Javascript diseñada para crear interfaces de usuario.|Ofrece herramientas que permiten trabajar fácilmente con datos que cambian constantemente además de que permite crear componentes de una manera intuitiva.|
+|Node.js|Entorno en tiempo de ejecución para la capa del servidor.|Posee una documentación muy completa y muchas herramientas que vuelven cómodo ejecutar programas hechos en Javascript.|
+|Vite|Herramienta de compilación que proporciona una experiencia de desarrollo rápida y ágil.|Proporciona un servidor de pruebas que se actualiza rápidamente.|
+|Express|Framework de Node.js que provee un conjunto de características para el desarrollo de aplicaciones web.|Brinda varios métodos HTTP que permiten utilizar API fácilmente.|
+|Crypto-js|Librería de Javascript con estándares de encriptación.|Permite encriptar cadenas de una forma sencilla a la vez que aumenta la seguridad de la aplicación.|
+|Docker|Proyecto que permite desplegar aplicaciones dentro de contenedores de software.|Simplifica enormemente la distribución de aplicaciones y permite que se ejecuten de manera autónoma.|
+|MySQL|Sistema de gestión de bases de datos relacionales.|Al ser considerada la base de datos más popular, posee una amplia documentación y ayuda con una gran variedad de problemas. También resulta sencillo realizar consultas y guardar información.|
